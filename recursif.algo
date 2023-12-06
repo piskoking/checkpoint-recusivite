@@ -1,0 +1,37 @@
+ALGORITHM recursivite
+VAR
+    set_declarations
+BEGIN
+FUNCTION palindrome(papy,s,h) : INTEGER
+VAR
+    papy:sting;
+    s:INTEGER;
+    h:INTEGER
+BEGIN
+    IF (s==h and papy [s]==papy[h]) THEN
+    RETURN write("le mot est un palindrome")
+    END_IF
+    IF (s<>h AND papy[s]<>papy[h]) THEN
+    RETURN write("le mots n'est pas un palindrome")
+    END_IF
+    IF (s<>h and papy[s]==papy[h]) THEN
+        RETURN palindrome(papy,s+1,h-1);
+    END_IF
+    ALGORITHM palindrome
+    VAR
+        papy:sting;
+        s;h:INTEGER
+    BEGIN
+        write("entrer un mot")
+        read(papy)
+        s=0
+        h=length(papy)-1
+        WHILE (papy.length<=1) DO
+            write("entreez un mot:")
+            read(papy)
+        END_WHILE
+        RETURN palindrome(papy,s,h)
+    END
+END
+    set_instructions
+END
